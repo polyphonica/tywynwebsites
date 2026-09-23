@@ -81,7 +81,7 @@ Both "simple sites" and "custom apps" pages follow the same layout:
 
 1. Nav bar
 2. Hero — offer headline + one line on who it's for
-3. Row of case study cards — each links straight out to the **live site** (decided: no internal case-study write-up pages, just polished preview cards with direct external links)
+3. Row of case study cards — each links to an internal case-study detail page (`/projects/[slug]`), which has explanatory text, multiple screenshots, and (where one exists) a link out to the **live site**
 4. Closing CTA — "Have a project like this? → Get in touch"
 
 Card order/content differs per page as set out in the table above.
@@ -91,7 +91,7 @@ Card order/content differs per page as set out in the table above.
 - Two separate offers (simple sites / custom apps), not one blended pitch
 - Prototypes: leaning toward static cards (no live link) for launch, given the timetabling app's real user data needs cleaning first; live clickable demos remain the eventual goal, not settled for v1
 - Primary niche framing starts narrow: early music / historical performance
-- Case study cards link directly to the live site — no internal case-study pages to write
+- Case study cards link to an internal detail page (explanatory text, multiple screenshots, link out to the live site if one exists) rather than straight out to the live site — reversed from the original "no internal case-study pages" decision, because some functionality (e.g. anything behind a login) can't be understood from the live site alone. Prototypes get the same detail-page treatment, minus the "live site" link until each one is cleaned up for public viewing.
 - recorder-ed appears on both offer pages with different framing on each
 - Polyphonica appears on custom apps only, paired with recorder-ed as the platform story
 - XB Mediation included as a fourth simple-sites example, despite being outside the music niche, to signal the offer generalizes

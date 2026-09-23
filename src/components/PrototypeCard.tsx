@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Prototype } from "@/data/projects";
 import ImagePlaceholder from "./ImagePlaceholder";
 import { tagStyle } from "@/lib/tagStyles";
@@ -8,12 +9,20 @@ export default function PrototypeCard({
   prototype: Prototype;
 }) {
   return (
-    <div className="card-frame flex flex-col">
+    <Link
+      href={`/prototypes/${prototype.slug}`}
+      className="card-frame group flex flex-col"
+    >
       <ImagePlaceholder label={prototype.name} />
       <div className="flex flex-1 flex-col gap-3 p-6">
-        <h3 className="font-display text-lg font-medium text-ink">
-          {prototype.name}
-        </h3>
+        <div className="flex items-baseline justify-between gap-3">
+          <h3 className="font-display text-lg font-medium text-ink">
+            {prototype.name}
+          </h3>
+          <span className="mono-label shrink-0 text-accent opacity-0 transition-opacity group-hover:opacity-100">
+            View →
+          </span>
+        </div>
         <p className="flex-1 text-[0.95rem] leading-relaxed text-ink-soft">
           {prototype.summary}
         </p>
@@ -29,6 +38,6 @@ export default function PrototypeCard({
         </div>
         <p className="mono-label pt-2 text-brass">{prototype.status}</p>
       </div>
-    </div>
+    </Link>
   );
 }
