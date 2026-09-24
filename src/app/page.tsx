@@ -15,7 +15,7 @@ export default function Home() {
             Websites and apps built by musicians, for musicians.
           </h1>
           <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-ink-soft">
-            I&apos;m a recorder teacher and performer with a background in QA
+            I&apos;m a private music teacher and performer with a background in QA
             and test automation. That combination means I understand both
             the software and the small arts organisation trying to run on
             it.

@@ -30,17 +30,42 @@ export default function AboutPage() {
               experience in tools like Playwright.
             </p>
             <p>
-              Most web builders who work with musicians and arts
-              organisations don&apos;t understand that world from the
-              inside. Most people who understand that world can&apos;t build
+              I have a Diploma from the New South Wales State Conservatorium
+              of Music (Newcastle, Australia), a Bachelor of Music degree
+              (Sydney Conservatorium of Music, Australia), and Master of Arts
+              in Music (University of Birmingham, UK). I have performed with
+              Polyphonica Recorder Trio in the UK, the Netherlands and
+              Germany, and with other ensembles and as soloist in Australia,
+              the UK, France and the United States.
+            </p>
+            <p>
+              I have a special interest in the relationship between language
+              and music in early music interpretation and performance. I am a
+              permanent tutor on the Higham Hall Early Music Course, and
+              conduct other residential recorder courses.
+            </p>
+            <p>
+              Many web builders who work with musicians and arts
+              organisations don&apos;t understand the professional musical
+              world from the inside. Equally, many people who understand that world can&apos;t build
               a real platform. I sit in both places, which is why
               recorder-ed and Polyphonica are the same underlying system
               doing two different jobs for two real businesses.
             </p>
             <p>
-              [Draft copy — replace with more detail on background,
-              teaching, performing, and how the QA/test-automation
-              experience shapes how projects get built and tested.]
+              Combining my decades-long, real-world experience of music
+              teaching and performing with years of experience in quality
+              assurance and development, I have worked to create tools that
+              support the operation of a typical teaching practice as a
+              serious, profit-making business. It all started with developing
+              a tool that reflects the different streams of my musical work
+              — private teaching, running public workshops (online and
+              in-person) and the ability to create self-directed online courses.
+              Using my Quality Assurance background, I have been able to
+              conduct rigorous functional testing as well as user testing
+              provided by pupils and other teachers. This has enabled me to
+              create tools that don&apos;t just reflect how I teach, but
+              facilitate how individual pupils learn.
             </p>
           </div>
         </div>

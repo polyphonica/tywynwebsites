@@ -24,7 +24,7 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Tywyn Websites — web development for music & performing arts",
   description:
-    "Websites and custom web applications for music teachers, ensembles, and performing arts organisations — built by a recorder teacher/performer with a QA and test-automation background.",
+    "Websites and custom web applications for music teachers, ensembles, and performing arts organisations — built by a private music teacher/performer with a QA and test-automation background.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
