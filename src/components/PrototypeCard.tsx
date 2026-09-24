@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Prototype } from "@/data/projects";
 import ImagePlaceholder from "./ImagePlaceholder";
@@ -13,7 +14,19 @@ export default function PrototypeCard({
       href={`/prototypes/${prototype.slug}`}
       className="card-frame group flex flex-col"
     >
-      <ImagePlaceholder label={prototype.name} />
+      {prototype.image ? (
+        <div className="relative aspect-[16/10] overflow-hidden border-b border-rule bg-paper">
+          <Image
+            src={prototype.image}
+            alt={`${prototype.name} screenshot`}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover object-top"
+          />
+        </div>
+      ) : (
+        <ImagePlaceholder label={prototype.name} />
+      )}
       <div className="flex flex-1 flex-col gap-3 p-6">
         <div className="flex items-baseline justify-between gap-3">
           <h3 className="font-display text-lg font-medium text-ink">

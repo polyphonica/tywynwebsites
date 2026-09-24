@@ -28,6 +28,8 @@ export type Prototype = {
   tags: string[];
   status: string;
   liveUrl?: string;
+  // Card thumbnail under /public; falls back to a placeholder when absent.
+  image?: string;
   body: string[];
   screenshots: Screenshot[];
 };
@@ -259,10 +261,20 @@ export const prototypes: Prototype[] = [
       "A marketplace prototype connecting musicians with opportunities — search, filtering, and profile listings.",
     tags: ["MARKETPLACE"],
     status: "Prototype — not yet publicly deployed",
+    image: "/screenshots/musiciansearch-search-results.png",
     body: [
       "A marketplace prototype exploring how musicians and venues or ensembles could find each other — search and filtering on one side, profile listings on the other.",
     ],
-    screenshots: ["Search results", "Musician profile"],
+    screenshots: [
+      {
+        label: "Search results",
+        src: "/screenshots/musiciansearch-search-results.png",
+      },
+      {
+        label: "Profile editor",
+        src: "/screenshots/musiciansearch-profile-editor.png",
+      },
+    ],
   },
   {
     slug: "musiciansearch-teacher",
@@ -271,10 +283,20 @@ export const prototypes: Prototype[] = [
       "A two-sided companion app to MusicianSearch, built around the teacher side of the marketplace relationship.",
     tags: ["TWO-SIDED APP"],
     status: "Prototype — not yet publicly deployed",
+    image: "/screenshots/musiciansearch-teacher-listing-form.png",
     body: [
       "The teacher-facing counterpart to MusicianSearch: managing incoming requests and availability from the other side of the marketplace relationship.",
     ],
-    screenshots: ["Teacher dashboard", "Booking requests"],
+    screenshots: [
+      {
+        label: "Teacher listing form",
+        src: "/screenshots/musiciansearch-teacher-listing-form.png",
+      },
+      {
+        label: "Rates and instruments",
+        src: "/screenshots/musiciansearch-teacher-rates-instruments.png",
+      },
+    ],
   },
   {
     slug: "timetabling-app",
@@ -282,23 +304,44 @@ export const prototypes: Prototype[] = [
     summary:
       "A scheduling tool for coordinating lessons and availability across multiple teachers and students.",
     tags: ["SCHEDULING"],
-    status: "Prototype — data cleanup required before publishing",
+    status: "Prototype — not yet publicly deployed",
+    image: "/screenshots/timetabling-course-timetable.png",
     body: [
-      "A scheduling tool for coordinating lessons and availability across multiple teachers and students. Screenshots are pending — the current build contains real user data that needs to be replaced with dummy data before it can be shown publicly.",
+      "A scheduling tool for coordinating lessons and availability across multiple teachers and students. Initially built to solve the administrative burden of organising the Higham Hall Early Music Course for singers and players of viol, recorder and lute. Includes allocation of participants to specific classes based on preference. Also includes sheet music upload for teachers, task tracking and timetable printing.",
     ],
-    screenshots: ["Weekly schedule", "Availability editor"],
+    screenshots: [
+      {
+        label: "Course timetable by room",
+        src: "/screenshots/timetabling-course-timetable.png",
+      },
+      {
+        label: "Student interests",
+        src: "/screenshots/timetabling-interests.png",
+      },
+    ],
   },
   {
     slug: "antique-tunes",
     name: "Antique Tunes",
     summary:
-      "A content and reference tool for exploring historical tune collections.",
-    tags: ["CONTENT / REFERENCE"],
+      "An online shop for rare, digitised sheet music from the early 20th century — browse, buy, and download instantly.",
+    tags: ["E-COMMERCE", "DIGITAL DOWNLOADS"],
     status: "Prototype — not yet publicly deployed",
+    image: "/screenshots/antique-tunes-home.png",
     body: [
-      "A content and reference tool for exploring historical tune collections — built to make browsing and cross-referencing early-music sources easier than flipping through scanned source material.",
+      "An online shop for rare sheet music from the early 20th century — ragtime, jazz, blues, Tin Pan Alley, marches and more — digitised from original copies and available to download instantly after purchase.",
+      "The catalogue can be searched by title, composer or instrument, and filtered by genre, decade, instrument and price, so customers can go straight to what they're looking for rather than scrolling through the whole collection.",
     ],
-    screenshots: ["Tune browser", "Tune detail"],
+    screenshots: [
+      {
+        label: "Homepage",
+        src: "/screenshots/antique-tunes-home.png",
+      },
+      {
+        label: "Catalogue with filters",
+        src: "/screenshots/antique-tunes-catalogue.png",
+      },
+    ],
   },
 ];
 
