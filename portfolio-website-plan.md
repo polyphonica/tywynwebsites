@@ -35,14 +35,14 @@ For anything needing bookings, logins, marketplaces, scheduling, or payments.
 | xb-mediation.de | Informational/brochure site for a German family and business mediation practice — no accounts or booking system | Simple sites | Outside the music niche entirely. Included as a fourth simple-sites example to signal the offer generalizes beyond music/arts clients, since the primary niche framing (early music/historical performance) is being started narrow but isn't fully committed to. |
 | MusicianSearch | Prototype — marketplace | Prototypes section | Needs to be made clickable before launch |
 | MusicianSearch-Teacher | Prototype — two-sided app | Prototypes section | Needs to be made clickable before launch |
-| Timetabling app | Prototype — scheduling tool | Prototypes section | Needs to be made clickable before launch |
-| Antique Tunes | Prototype — content/reference tool | Prototypes section | Needs to be made clickable before launch |
+| Timetabling app | Prototype — scheduling tool (built for the Higham Hall Early Music Course: class allocation by preference, sheet music upload, task tracking, timetable printing) | Prototypes section | Needs to be made clickable before launch |
+| Antique Tunes | Prototype — e-commerce shop for digitised early 20th-century sheet music (catalogue search/filters, instant download) | Prototypes section | Needs to be made clickable before launch |
 
 Open question (not yet resolved): are the four prototypes already live and just need a public demo mode, or do they still need hosting/deployment before they can go on the site? This affects whether "prototypes" launches with the rest of the site or follows as a second phase.
 
-Complication: the timetabling app contains real user data that would need to be removed or replaced with dummy data before it could be linked to publicly. This is pushing toward static cards for prototypes rather than clickable demos, at least for launch — live linking may follow once each prototype has been individually cleaned up.
+Prototypes launch as static cards with screenshots rather than clickable demos — live linking may follow once each prototype is ready for public viewing.
 
-Prototype cards will use screenshots (not text-only). This still requires the timetabling app's real user data to be swapped for dummy data before a screenshot can be taken/published, even though it won't be live-linked — the data-cleanup step isn't avoided by going static, only the live-link exposure is.
+Prototype cards and detail pages now use real screenshots for all four prototypes. The timetabling app screenshots show real data (the Higham Hall Early Music Course 2027 timetable, with tutor names); decided to publish these as-is rather than swap in dummy data first. The MusicianSearch screenshots use fake names.
 
 ## Technology stack
 
@@ -89,7 +89,8 @@ Card order/content differs per page as set out in the table above.
 ## Decisions made so far
 
 - Two separate offers (simple sites / custom apps), not one blended pitch
-- Prototypes: leaning toward static cards (no live link) for launch, given the timetabling app's real user data needs cleaning first; live clickable demos remain the eventual goal, not settled for v1
+- Prototypes: static cards with screenshots (no live link) for launch; live clickable demos remain the eventual goal, not settled for v1
+- Timetabling app screenshots published with real course data (Higham Hall timetable, tutor names) rather than dummy data
 - Primary niche framing starts narrow: early music / historical performance
 - Case study cards link to an internal detail page (explanatory text, multiple screenshots, link out to the live site if one exists) rather than straight out to the live site — reversed from the original "no internal case-study pages" decision, because some functionality (e.g. anything behind a login) can't be understood from the live site alone. Prototypes get the same detail-page treatment, minus the "live site" link until each one is cleaned up for public viewing.
 - recorder-ed appears on both offer pages with different framing on each
