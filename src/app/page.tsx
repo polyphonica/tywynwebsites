@@ -17,8 +17,8 @@ export default function Home() {
           <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-ink-soft">
             I&apos;m a private music teacher and performer with a background in
             Quality Assurance, test automation, and software development. This
-            combination means I understand both the software and the needs of
-            the small arts organisation needing software solutions.
+            means I understand both sides: how the software works, and what a
+            small arts organisation actually needs from it.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link href="/work/simple-sites" className="btn-primary">
