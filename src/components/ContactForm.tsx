@@ -98,6 +98,11 @@ export default function ContactForm() {
         />
       </div>
 
+      <div aria-hidden="true" className="absolute -left-[9999px]">
+        <label htmlFor="website">Leave this empty</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <button
         type="submit"
         disabled={status === "submitting"}
@@ -108,7 +113,11 @@ export default function ContactForm() {
 
       {status === "error" && (
         <p className="text-accent">
-          Something went wrong sending that — please try again.
+          Something went wrong sending that — please try again, or email{" "}
+          <a href="mailto:tywynwebsites@gmail.com" className="underline">
+            tywynwebsites@gmail.com
+          </a>
+          .
         </p>
       )}
     </form>
