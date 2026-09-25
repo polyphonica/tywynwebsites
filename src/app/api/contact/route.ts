@@ -19,12 +19,29 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+const rateLimit = { max: 5, windowMs: 60 * 60 * 1000 };
+const recentSubmissions = new Map<string, number[]>();
+
+function isRateLimited(ip: string) {
+  const now = Date.now();
+  for (const [key, times] of recentSubmissions) {
+    const recent = times.filter((time) => now - time < rateLimit.windowMs);
+    if (recent.length) recentSubmissions.set(key, recent);
+    else recentSubmissions.delete(key);
+  }
+  const times = recentSubmissions.get(ip) ?? [];
+  if (times.length >= rateLimit.max) return true;
+  recentSubmissions.set(ip, [...times, now]);
+  return false;
+}
+
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
-  const { name, email, message, projectType, website } = body ?? {};
+  const { name, email, message, projectType, website, elapsedMs } = body ?? {};
 
-  // Honeypot: real visitors never see this field, so anything in it is a bot.
-  if (website) {
+  // Bots fill the hidden honeypot field, or submit faster than a person could
+  // type. Pretend it worked so they don't adapt.
+  if (website || typeof elapsedMs !== "number" || elapsedMs < 3000) {
     return NextResponse.json({ ok: true });
   }
 
@@ -46,6 +63,12 @@ export async function POST(request: Request) {
     !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
   ) {
     return NextResponse.json({ error: "Invalid fields" }, { status: 400 });
+  }
+
+  // nginx sets X-Real-IP; without it, all visitors share one bucket.
+  const ip = request.headers.get("x-real-ip") ?? "unknown";
+  if (isRateLimited(ip)) {
+    return NextResponse.json({ error: "Too many messages" }, { status: 429 });
   }
 
   const project = projectTypes[projectType] ?? "Not specified";
