@@ -5,6 +5,7 @@ import ClosingCta from "@/components/ClosingCta";
 import { prototypes } from "@/data/projects";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/prototypes" },
   title: "Prototypes — Tywyn Websites",
   description: "Self-initiated app builds, on their way to becoming public demos.",
 };

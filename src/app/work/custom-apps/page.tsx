@@ -5,6 +5,7 @@ import ClosingCta from "@/components/ClosingCta";
 import { customAppsProjects } from "@/data/projects";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/work/custom-apps" },
   title: "Custom apps — Tywyn Websites",
   description:
     "Custom web applications with bookings, logins, marketplaces, scheduling, or payments.",

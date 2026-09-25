@@ -3,6 +3,7 @@ import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ClosingCta from "@/components/ClosingCta";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About — Tywyn Websites",
   description: "Recorder teacher and performer, QA and test-automation professional, web developer.",
 };

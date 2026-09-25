@@ -19,6 +19,7 @@ export async function generateMetadata(
   return {
     title: `${project.name} — Tywyn Websites`,
     description: project.intro,
+    alternates: { canonical: `/projects/${slug}` },
   };
 }
 

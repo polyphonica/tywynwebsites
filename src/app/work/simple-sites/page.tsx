@@ -5,6 +5,7 @@ import ClosingCta from "@/components/ClosingCta";
 import { simpleSitesProjects } from "@/data/projects";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/work/simple-sites" },
   title: "Simple sites — Tywyn Websites",
   description:
     "Straightforward websites for music teachers, ensembles, and small businesses.",

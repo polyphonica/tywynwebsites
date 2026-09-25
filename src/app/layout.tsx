@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Source_Serif_4, IBM_Plex_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -22,6 +23,13 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  alternates: { canonical: "/" },
+  openGraph: {
+    siteName: "Tywyn Websites",
+    locale: "en_GB",
+    type: "website",
+  },
   title: "Tywyn Websites — web development for music & performing arts",
   description:
     "Websites and custom web applications for music teachers, ensembles, and performing arts organisations — built by a private music teacher/performer with a QA and test-automation background.",
