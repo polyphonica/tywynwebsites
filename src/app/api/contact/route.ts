@@ -7,11 +7,15 @@ const projectTypes: Record<string, string> = {
   "not-sure": "Not sure yet",
 };
 
+const smtpPort = Number(process.env.SMTP_PORT ?? 465);
+
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: process.env.SMTP_HOST,
+  port: smtpPort,
+  secure: smtpPort === 465,
   auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
   },
 });
 
@@ -48,8 +52,8 @@ export async function POST(request: Request) {
 
   try {
     await transporter.sendMail({
-      from: `"Tywyn Websites" <${process.env.GMAIL_USER}>`,
-      to: process.env.CONTACT_TO ?? process.env.GMAIL_USER,
+      from: `"Tywyn Websites" <${process.env.SMTP_USER}>`,
+      to: process.env.CONTACT_TO ?? process.env.SMTP_USER,
       replyTo: { name: name.trim(), address: email.trim() },
       subject: `Website enquiry from ${name.trim()}`,
       text: `Name: ${name.trim()}\nEmail: ${email.trim()}\nProject: ${project}\n\n${message.trim()}`,
