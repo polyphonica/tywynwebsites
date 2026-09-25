@@ -114,8 +114,8 @@ export default function ContactForm() {
       {status === "error" && (
         <p className="text-accent">
           Something went wrong sending that — please try again, or email{" "}
-          <a href="mailto:hello@tywynwebsites.co.uk" className="underline">
-            hello@tywynwebsites.co.uk
+          <a href="mailto:info@tywynwebsites.co.uk" className="underline">
+            info@tywynwebsites.co.uk
           </a>
           .
         </p>
