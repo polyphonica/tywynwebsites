@@ -1,7 +1,7 @@
 const TAG_STYLES = [
-  "bg-accent/10 text-accent border-accent/30",
-  "bg-teal/10 text-teal border-teal/30",
-  "bg-brass/15 text-brass border-brass/40",
+  "bg-accent/6 text-accent border-accent/30",
+  "bg-teal/6 text-teal border-teal/30",
+  "bg-brass/6 text-brass border-brass/40",
 ];
 
 export function tagStyle(index: number) {

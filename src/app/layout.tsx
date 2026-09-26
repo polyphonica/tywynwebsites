@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Source_Serif_4, IBM_Plex_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import SkipLink from "@/components/SkipLink";
 import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -42,8 +43,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${fraunces.variable} ${sourceSerif.variable} ${plexMono.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink font-body antialiased">
+        <SkipLink />
         <Nav />
-        <main className="flex-1">{children}</main>
+        <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

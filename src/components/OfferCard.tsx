@@ -27,7 +27,7 @@ export default function OfferCard({
       </p>
       <span className="mono-label inline-flex items-center gap-2 text-ink transition-colors group-hover:text-accent">
         {cta}
-        <span aria-hidden className="transition-transform group-hover:translate-x-1">
+        <span aria-hidden className="transition-transform motion-safe:group-hover:translate-x-1">
           →
         </span>
       </span>

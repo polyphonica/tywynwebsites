@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ContactLink from "./ContactLink";
 import LanguageSwitch from "./LanguageSwitch";
+import MobileMenu from "./MobileMenu";
 
 const links = [
   { href: "/work/starter-sites", label: "Starter sites" },
@@ -11,7 +12,7 @@ const links = [
 
 export default function Nav() {
   return (
-    <header className="border-b border-rule">
+    <header className="relative border-b border-rule">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
         <Link
           href="/"
@@ -19,7 +20,7 @@ export default function Nav() {
         >
           Tywyn Websites
         </Link>
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav aria-label="Main" className="hidden items-center gap-7 md:flex">
           {links.map((link) => (
             <Link
               key={link.href}
@@ -37,7 +38,7 @@ export default function Nav() {
         </nav>
         <div className="flex items-center gap-5 md:hidden">
           <LanguageSwitch className="mono-label text-ink-soft transition-colors hover:text-accent" />
-          <ContactLink label="Contact" className="btn-secondary" />
+          <MobileMenu links={links} />
         </div>
       </div>
     </header>

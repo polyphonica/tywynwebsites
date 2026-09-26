@@ -46,10 +46,17 @@ export default function ContactForm({
   const t = copy[language];
   const [status, setStatus] = useState<Status>("idle");
   const loadedAt = useRef(0);
+  const successRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     loadedAt.current = Date.now();
   }, []);
+
+  // The form is replaced by the success message, so move focus there;
+  // otherwise keyboard and screen-reader users are left on nothing.
+  useEffect(() => {
+    if (status === "success") successRef.current?.focus();
+  }, [status]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -80,7 +87,12 @@ export default function ContactForm({
 
   if (status === "success") {
     return (
-      <div className="card-frame p-8">
+      <div
+        ref={successRef}
+        tabIndex={-1}
+        role="status"
+        className="card-frame p-8"
+      >
         <p className="font-display text-xl text-ink">{t.sent}</p>
         <p className="mt-2 text-ink-soft">{t.thanks}</p>
       </div>
@@ -98,7 +110,7 @@ export default function ContactForm({
           name="name"
           type="text"
           required
-          className="border border-rule bg-paper px-4 py-3 text-ink outline-none focus:border-accent"
+          className="border border-rule bg-paper px-4 py-3 text-ink focus:border-accent"
         />
       </div>
 
@@ -111,7 +123,7 @@ export default function ContactForm({
           name="email"
           type="email"
           required
-          className="border border-rule bg-paper px-4 py-3 text-ink outline-none focus:border-accent"
+          className="border border-rule bg-paper px-4 py-3 text-ink focus:border-accent"
         />
       </div>
 
@@ -123,7 +135,7 @@ export default function ContactForm({
           id="projectType"
           name="projectType"
           defaultValue="starter-site"
-          className="border border-rule bg-paper px-4 py-3 text-ink outline-none focus:border-accent"
+          className="border border-rule bg-paper px-4 py-3 text-ink focus:border-accent"
         >
           <option value="starter-site">{t.starterSite}</option>
           <option value="custom-app">{t.customApp}</option>
@@ -140,7 +152,7 @@ export default function ContactForm({
           name="message"
           required
           rows={6}
-          className="border border-rule bg-paper px-4 py-3 text-ink outline-none focus:border-accent"
+          className="border border-rule bg-paper px-4 py-3 text-ink focus:border-accent"
         />
       </div>
 
@@ -158,7 +170,7 @@ export default function ContactForm({
       </button>
 
       {status === "error" && (
-        <p className="text-accent">
+        <p role="alert" className="text-accent">
           {t.error}{" "}
           <a href="mailto:info@tywynwebsites.co.uk" className="underline">
             info@tywynwebsites.co.uk
