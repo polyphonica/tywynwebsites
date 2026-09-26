@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import OfferPageHero from "@/components/OfferPageHero";
 import ProjectCard from "@/components/ProjectCard";
 import ClosingCta from "@/components/ClosingCta";
-import { starterSitesProjects } from "@/data/projects";
+import TestimonialQuote from "@/components/TestimonialQuote";
+import { projectDetails, starterSitesProjects } from "@/data/projects";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/work/starter-sites" },
@@ -12,6 +13,13 @@ export const metadata: Metadata = {
 };
 
 export default function StarterSitesPage() {
+  const testimonials = projectDetails.flatMap((detail) =>
+    detail.testimonial &&
+    starterSitesProjects.some((project) => project.slug === detail.slug)
+      ? [detail.testimonial]
+      : [],
+  );
+
   return (
     <>
       <OfferPageHero
@@ -25,6 +33,16 @@ export default function StarterSitesPage() {
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
+        {testimonials.length > 0 && (
+          <div className="mt-16 flex max-w-3xl flex-col gap-12">
+            {testimonials.map((testimonial) => (
+              <TestimonialQuote
+                key={testimonial.quote}
+                testimonial={testimonial}
+              />
+            ))}
+          </div>
+        )}
       </section>
       <ClosingCta prompt="Have a project like this?" />
     </>

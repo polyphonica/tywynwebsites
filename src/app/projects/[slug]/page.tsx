@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import ScreenshotGallery from "@/components/ScreenshotGallery";
 import ClosingCta from "@/components/ClosingCta";
+import TestimonialQuote from "@/components/TestimonialQuote";
 import { tagStyle } from "@/lib/tagStyles";
 import { getProjectDetail, projectDetails } from "@/data/projects";
 
@@ -75,6 +76,11 @@ export default async function ProjectDetailPage(
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
+        {project.testimonial && (
+          <div className="mt-14 max-w-3xl">
+            <TestimonialQuote testimonial={project.testimonial} />
+          </div>
+        )}
       </section>
 
       <ClosingCta prompt="Have a project like this?" />

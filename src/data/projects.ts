@@ -11,6 +11,17 @@ export type Project = {
 // A plain string renders as a labelled placeholder until a real image exists.
 export type Screenshot = string | { label: string; src: string };
 
+// Only shown where a client has approved the quote and how they're credited;
+// projects without one render no testimonial block at all.
+export type Testimonial = {
+  quote: string;
+  name?: string;
+  role?: string;
+  organisation: string;
+  // The client's own German wording, for the /de page.
+  de?: { quote: string; role?: string };
+};
+
 export type ProjectDetail = {
   slug: string;
   name: string;
@@ -19,6 +30,7 @@ export type ProjectDetail = {
   body: string[];
   screenshots: Screenshot[];
   tags: string[];
+  testimonial?: Testimonial;
 };
 
 export type Prototype = {
@@ -232,6 +244,18 @@ export const projectDetails: ProjectDetail[] = [
       },
     ],
     tags: ["BROCHURE SITE", "NON-MUSIC"],
+    testimonial: {
+      quote:
+        "Michael understood my vision, challenged ideas where necessary, and helped transform an initial concept into a polished, high-quality product. Without Michael, this project would not have reached the level it has today.",
+      name: "Xaver Behl",
+      role: "Mediator and owner",
+      organisation: "XB Mediation",
+      de: {
+        quote:
+          "Michael hat meine Vision verstanden, Ideen kritisch hinterfragt, wo es nötig war, und dabei geholfen, aus einem ersten Konzept ein ausgereiftes, hochwertiges Produkt zu machen. Ohne Michael hätte dieses Projekt nie das Niveau erreicht, das es heute hat.",
+        role: "Mediator und Inhaber",
+      },
+    },
   },
 ];
 

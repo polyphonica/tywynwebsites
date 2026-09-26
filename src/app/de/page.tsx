@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import TestimonialQuote from "@/components/TestimonialQuote";
+import { getProjectDetail } from "@/data/projects";
 
 export const metadata: Metadata = {
   alternates: {
@@ -52,6 +54,7 @@ const examples = [
     linkLabel: "xb-mediation.de ansehen ↗",
     image: "/screenshots/xb-mediation-home.png",
     alt: "Startseite von xb-mediation.de",
+    testimonial: getProjectDetail("xb-mediation")?.testimonial,
     text: [
       "Für XB Mediation, ein Angebot für Familien- und Wirtschaftsmediation, habe ich eine ruhige, professionelle Website erstellt — vollständig auf Deutsch.",
       "Sie erklärt, was Mediation ist, wie der Ablauf funktioniert und was sie kostet, und macht es einfach, ein Erstgespräch zu vereinbaren.",
@@ -163,6 +166,14 @@ export default function GermanLandingPage() {
                   {example.linkLabel}
                 </a>
               </div>
+              {example.testimonial?.de && (
+                <div className="max-w-3xl md:col-span-2">
+                  <TestimonialQuote
+                    testimonial={example.testimonial}
+                    language="de"
+                  />
+                </div>
+              )}
             </div>
           ))}
         </div>
