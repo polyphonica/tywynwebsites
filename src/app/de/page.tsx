@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     locale: "de_DE",
     type: "website",
   },
-  title: "Websites für Praxen und kleine Unternehmen — Tywyn Websites",
+  title: "Websites für Musik, Kultur und kleine Unternehmen — Tywyn Websites",
   description:
-    "Klare, professionelle Websites auf Deutsch für Praxen, Selbstständige und kleine Unternehmen — zum Festpreis, mit optionaler laufender Betreuung.",
+    "Klare, professionelle Websites für Musikerinnen und Musiker, Ensembles, Kulturorganisationen, Selbstständige und kleine Unternehmen — zum Festpreis, mit optionaler laufender Betreuung.",
 };
 
 const included = [
@@ -23,6 +23,31 @@ const included = [
   "Optimiert für Smartphone, Tablet und Desktop",
   "Suchmaschinenoptimierung von Anfang an",
   "Optional: monatliche Betreuung mit Hosting, Backups und kleinen Änderungen",
+];
+
+const examples = [
+  {
+    name: "XB Mediation",
+    url: "https://xb-mediation.de",
+    linkLabel: "xb-mediation.de ansehen ↗",
+    image: "/screenshots/xb-mediation-home.png",
+    alt: "Startseite von xb-mediation.de",
+    text: [
+      "Für XB Mediation, ein Angebot für Familien- und Wirtschaftsmediation, habe ich eine ruhige, professionelle Website erstellt — vollständig auf Deutsch.",
+      "Sie erklärt, was Mediation ist, wie der Ablauf funktioniert und was sie kostet, und macht es einfach, ein Erstgespräch zu vereinbaren.",
+    ],
+  },
+  {
+    name: "Liverpool Renaissance Singers",
+    url: "https://liverpoolrenaissancesingers.org",
+    linkLabel: "liverpoolrenaissancesingers.org ansehen ↗",
+    image: "/screenshots/liverpool-renaissance-singers-home-v2.png",
+    alt: "Startseite von liverpoolrenaissancesingers.org",
+    text: [
+      "Für einen Chor, der sich der Musik der Renaissance widmet, stellt die Website Repertoire, Konzerte und Mitsingmöglichkeiten vor.",
+      "Über einen Mitgliederbereich pflegt der Chor Konzerte, Newsletter und Dokumente selbst — ganz ohne Entwickler für jede Änderung. (Die Website ist auf Englisch.)",
+    ],
+  },
 ];
 
 const steps = [
@@ -53,65 +78,72 @@ export default function GermanLandingPage() {
         <div className="mx-auto max-w-6xl px-6 pt-20 pb-16 sm:pt-28 sm:pb-24">
           <p className="mono-label mb-6 text-brass">Tywyn Websites — Deutsch</p>
           <h1 className="text-balance max-w-3xl font-display text-4xl font-medium leading-[1.1] tracking-tight text-ink sm:text-5xl md:text-6xl">
-            Professionelle Websites für Praxen, Selbstständige und kleine
-            Unternehmen.
+            Websites für Musik, Kultur und kleine Unternehmen.
           </h1>
           <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-ink-soft">
-            Klar, verlässlich und vollständig auf Deutsch. Ich verbinde
-            langjährige Erfahrung in Qualitätssicherung und Webentwicklung mit
-            einem genauen Blick darauf, was Ihre Besucher wirklich suchen.
+            Klare, verlässliche Websites auf Deutsch — für Musikerinnen und
+            Musiker, Ensembles und Kulturorganisationen ebenso wie für
+            Selbstständige und kleine Unternehmen.
+          </p>
+          <p className="mt-4 max-w-xl text-balance text-lg leading-relaxed text-ink-soft">
+            Als Blockflötist und Ensemblemusiker, unter anderem mit Konzerten
+            in Deutschland, kenne ich die Welt, für die ich baue. Dazu kommt
+            langjährige Erfahrung in Qualitätssicherung und Webentwicklung.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a href="#kontakt" className="btn-primary">
               Kontakt aufnehmen
             </a>
-            <a href="#beispiel" className="btn-secondary">
-              Beispiel ansehen
+            <a href="#beispiele" className="btn-secondary">
+              Beispiele ansehen
             </a>
           </div>
         </div>
       </section>
 
-      <section id="beispiel" className="mx-auto max-w-6xl scroll-mt-8 px-6 py-16 sm:py-24">
-        <p className="mono-label mb-3 text-brass">Beispiel</p>
+      <section id="beispiele" className="mx-auto max-w-6xl scroll-mt-8 px-6 py-16 sm:py-24">
+        <p className="mono-label mb-3 text-brass">Beispiele</p>
         <h2 className="mb-10 font-display text-2xl font-medium text-ink sm:text-3xl">
-          XB Mediation
+          Zwei Websites, zwei Welten
         </h2>
-        <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <a
-            href="https://xb-mediation.de"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="card-frame relative block aspect-[16/10] overflow-hidden"
-          >
-            <Image
-              src="/screenshots/xb-mediation-home.png"
-              alt="Startseite von xb-mediation.de"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover object-top"
-            />
-          </a>
-          <div className="flex flex-col gap-5 text-lg leading-relaxed text-ink-soft">
-            <p>
-              Für eine Praxis für Familien- und Wirtschaftsmediation habe ich
-              eine ruhige, professionelle Website erstellt — vollständig auf
-              Deutsch.
-            </p>
-            <p>
-              Sie erklärt, was Mediation ist, wie der Ablauf funktioniert und
-              was sie kostet, und macht es einfach, ein Erstgespräch zu
-              vereinbaren.
-            </p>
-            <a
-              href="https://xb-mediation.de"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mono-label text-ink transition-colors hover:text-accent"
+        <div className="flex flex-col gap-16">
+          {examples.map((example) => (
+            <div
+              key={example.name}
+              className="grid gap-10 md:grid-cols-2 md:items-center"
             >
-              xb-mediation.de ansehen ↗
-            </a>
-          </div>
+              <a
+                href={example.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-frame relative block aspect-[16/10] overflow-hidden"
+              >
+                <Image
+                  src={example.image}
+                  alt={example.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-top"
+                />
+              </a>
+              <div className="flex flex-col gap-5 text-lg leading-relaxed text-ink-soft">
+                <h3 className="font-display text-xl font-medium text-ink">
+                  {example.name}
+                </h3>
+                {example.text.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+                <a
+                  href={example.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mono-label break-all text-ink transition-colors hover:text-accent"
+                >
+                  {example.linkLabel}
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -159,8 +191,9 @@ export default function GermanLandingPage() {
           ))}
         </ol>
         <p className="mt-10 max-w-2xl text-ink-soft">
-          Sie brauchen mehr als eine Website — etwa Online-Buchungen,
-          Kundenkonten oder Zahlungen? Auch das ist möglich:{" "}
+          Sie brauchen mehr als eine Website — etwa Online-Buchungen für
+          Unterricht, Kurse oder Workshops, Kundenkonten oder Zahlungen? Auch
+          das ist möglich:{" "}
           <Link
             href="/work/custom-apps"
             className="text-ink underline decoration-rule underline-offset-4 transition-colors hover:text-accent"
