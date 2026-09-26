@@ -18,11 +18,31 @@ export const metadata: Metadata = {
     "Klare, professionelle Websites für Musikerinnen und Musiker, Ensembles, Kulturorganisationen, Selbstständige und kleine Unternehmen — zum Festpreis, mit optionaler laufender Betreuung.",
 };
 
-const included = [
-  "Festpreis für die Erstellung",
-  "Optimiert für Smartphone, Tablet und Desktop",
-  "Suchmaschinenoptimierung von Anfang an",
-  "Optional: monatliche Betreuung mit Hosting, Backups und kleinen Änderungen",
+const offers = [
+  {
+    eyebrow: "Angebot 01",
+    title: "Starter-Websites",
+    description:
+      "Ihre Website basiert auf einer bewährten Vorlage und wird mit Ihren Inhalten, Bildern und Ihrem Erscheinungsbild angepasst. So ist sie schnell online und hat einen festen Preis.",
+    points: [
+      "Festpreis für die Erstellung",
+      "Optimiert für Smartphone, Tablet und Desktop",
+      "Suchmaschinenoptimierung von Anfang an",
+      "Optional: monatliche Betreuung mit Hosting, Backups und kleinen Änderungen",
+    ],
+  },
+  {
+    eyebrow: "Angebot 02",
+    title: "Individuelle Web-Anwendungen",
+    description:
+      "Für alles, was eine Starter-Website nicht leisten kann: Ihre Website übernimmt Buchungen, Kurse und Zahlungen selbst — zugeschnitten auf die Arbeitsweise Ihres Betriebs.",
+    points: [
+      "Online-Buchungen, Kundenkonten, Kurse, Zahlungen und Rückerstattungen — direkt auf Ihrer eigenen Website",
+      "Keine Provisionen oder Abos für Buchungsplattformen",
+      "Aufgebaut auf Komponenten, die bereits echte Betriebe tragen — Sie zahlen für das, was Ihr Vorhaben besonders macht, nicht für die Grundlagen",
+      "Klar umrissenes Projekt mit laufender Betreuung",
+    ],
+  },
 ];
 
 const examples = [
@@ -56,16 +76,16 @@ const steps = [
     text: "Wir klären, was Sie und Ihre Besucher von der Website brauchen.",
   },
   {
-    title: "Festpreis-Angebot",
-    text: "Sie erhalten ein klares Angebot, ohne versteckte Kosten.",
+    title: "Klares Angebot",
+    text: "Zum Festpreis für eine Starter-Website oder als klar umrissenes Projekt für eine Web-Anwendung — ohne versteckte Kosten.",
   },
   {
     title: "Umsetzung",
-    text: "Ich passe die Vorlage an Ihre Inhalte und Ihr Erscheinungsbild an und stimme jeden Schritt mit Ihnen ab.",
+    text: "Ich setze Ihre Website oder Anwendung um und stimme jeden Schritt mit Ihnen ab.",
   },
   {
     title: "Veröffentlichung",
-    text: "Ihre Website geht online — auf Wunsch mit laufender Betreuung.",
+    text: "Ihre Website geht online — und ich bleibe für Betreuung und Weiterentwicklung ansprechbar.",
   },
 ];
 
@@ -81,7 +101,8 @@ export default function GermanLandingPage() {
             Websites für Musik, Kultur und kleine Unternehmen.
           </h1>
           <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-ink-soft">
-            Klare, verlässliche Websites auf Deutsch — für Musikerinnen und
+            Klare, verlässliche Websites und individuelle Web-Anwendungen auf
+            Deutsch — für Musikerinnen und
             Musiker, Ensembles und Kulturorganisationen ebenso wie für
             Selbstständige und kleine Unternehmen.
           </p>
@@ -148,25 +169,49 @@ export default function GermanLandingPage() {
       </section>
 
       <section className="border-t border-rule bg-paper-dim">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 sm:py-24 md:grid-cols-2">
-          <div>
-            <p className="mono-label mb-3 text-brass">Das Angebot</p>
-            <h2 className="mb-6 font-display text-2xl font-medium text-ink sm:text-3xl">
-              Starter-Websites
-            </h2>
-            <p className="text-lg leading-relaxed text-ink-soft">
-              Ihre Website basiert auf einer bewährten Vorlage und wird mit
-              Ihren Inhalten, Bildern und Ihrem Erscheinungsbild angepasst. So
-              ist sie schnell online und hat einen festen Preis.
-            </p>
-          </div>
-          <ul className="flex flex-col gap-4 self-center">
-            {included.map((item) => (
-              <li key={item} className="card-frame px-6 py-4 text-ink">
-                {item}
-              </li>
+        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+          <p className="mono-label mb-3 text-brass">Das Angebot</p>
+          <h2 className="mb-10 font-display text-2xl font-medium text-ink sm:text-3xl">
+            Zwei Wege zur Zusammenarbeit
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            {offers.map((offer) => (
+              <div
+                key={offer.title}
+                className="flex flex-col gap-5 border border-rule bg-paper p-8 sm:p-10"
+              >
+                <span className="mono-label text-brass">{offer.eyebrow}</span>
+                <h3 className="font-display text-2xl font-medium text-ink sm:text-3xl">
+                  {offer.title}
+                </h3>
+                <p className="text-[1.02rem] leading-relaxed text-ink-soft">
+                  {offer.description}
+                </p>
+                <ul className="flex flex-col gap-3 border-t border-rule pt-5">
+                  {offer.points.map((point) => (
+                    <li key={point} className="flex gap-3 text-ink">
+                      <span aria-hidden className="text-accent">
+                        —
+                      </span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
+          <p className="mt-8 max-w-2xl text-ink-soft">
+            Beispiele für Web-Anwendungen: recorder-ed.com (Unterricht, Kurse
+            und Workshops) und das Polyphonica Recorder Trio (Konzert- und
+            Workshopbuchungen mit Zahlungen).{" "}
+            <Link
+              href="/work/custom-apps"
+              className="text-ink underline decoration-rule underline-offset-4 transition-colors hover:text-accent"
+            >
+              Mehr dazu
+            </Link>{" "}
+            (Seite auf Englisch).
+          </p>
         </div>
       </section>
 
@@ -190,18 +235,6 @@ export default function GermanLandingPage() {
             </li>
           ))}
         </ol>
-        <p className="mt-10 max-w-2xl text-ink-soft">
-          Sie brauchen mehr als eine Website — etwa Online-Buchungen für
-          Unterricht, Kurse oder Workshops, Kundenkonten oder Zahlungen? Auch
-          das ist möglich:{" "}
-          <Link
-            href="/work/custom-apps"
-            className="text-ink underline decoration-rule underline-offset-4 transition-colors hover:text-accent"
-          >
-            individuelle Web-Anwendungen
-          </Link>{" "}
-          (Seite auf Englisch).
-        </p>
       </section>
 
       <section id="kontakt" className="grain scroll-mt-8 border-t border-rule">
