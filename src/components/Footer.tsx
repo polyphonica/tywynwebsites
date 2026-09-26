@@ -1,4 +1,6 @@
 import Link from "next/link";
+import ContactLink from "./ContactLink";
+import LanguageSwitch from "./LanguageSwitch";
 
 export default function Footer() {
   return (
@@ -7,7 +9,7 @@ export default function Footer() {
         <p className="mono-label text-ink-soft">
           © {new Date().getFullYear()} Tywyn Websites
         </p>
-        <div className="flex gap-6">
+        <div className="flex flex-wrap gap-x-6 gap-y-3">
           <Link
             href="/work/starter-sites"
             className="mono-label text-ink-soft transition-colors hover:text-accent"
@@ -20,12 +22,11 @@ export default function Footer() {
           >
             Custom apps
           </Link>
-          <Link
-            href="/contact"
+          <ContactLink
+            label="Get in touch"
             className="mono-label text-ink-soft transition-colors hover:text-accent"
-          >
-            Get in touch
-          </Link>
+          />
+          <LanguageSwitch className="mono-label text-ink-soft transition-colors hover:text-accent" />
         </div>
       </div>
     </footer>

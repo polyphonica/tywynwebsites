@@ -37,7 +37,8 @@ function isRateLimited(ip: string) {
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
-  const { name, email, message, projectType, website, elapsedMs } = body ?? {};
+  const { name, email, message, projectType, website, elapsedMs, language } =
+    body ?? {};
 
   // Bots fill the hidden honeypot field, or submit faster than a person could
   // type. Pretend it worked so they don't adapt.
@@ -78,7 +79,7 @@ export async function POST(request: Request) {
       from: `"Tywyn Websites" <${process.env.SMTP_USER}>`,
       to: process.env.CONTACT_TO ?? process.env.SMTP_USER,
       replyTo: { name: name.trim(), address: email.trim() },
-      subject: `Website enquiry from ${name.trim()}`,
+      subject: `${language === "de" ? "[DE] " : ""}Website enquiry from ${name.trim()}`,
       text: `Name: ${name.trim()}\nEmail: ${email.trim()}\nProject: ${project}\n\n${message.trim()}`,
     });
   } catch (error) {

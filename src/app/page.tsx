@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import OfferCard from "@/components/OfferCard";
 import ProjectCard from "@/components/ProjectCard";
 import { homepageSelectedWork, prototypes } from "@/data/projects";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+    languages: { en: "/", de: "/de", "x-default": "/" },
+  },
+};
 
 export default function Home() {
   return (

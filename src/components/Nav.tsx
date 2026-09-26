@@ -1,11 +1,12 @@
 import Link from "next/link";
+import ContactLink from "./ContactLink";
+import LanguageSwitch from "./LanguageSwitch";
 
 const links = [
   { href: "/work/starter-sites", label: "Starter sites" },
   { href: "/work/custom-apps", label: "Custom apps" },
   { href: "/prototypes", label: "Prototypes" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export default function Nav() {
@@ -28,10 +29,16 @@ export default function Nav() {
               {link.label}
             </Link>
           ))}
+          <ContactLink
+            label="Contact"
+            className="mono-label text-ink-soft transition-colors hover:text-accent"
+          />
+          <LanguageSwitch className="mono-label text-ink-soft transition-colors hover:text-accent" />
         </nav>
-        <Link href="/contact" className="btn-secondary md:hidden">
-          Contact
-        </Link>
+        <div className="flex items-center gap-5 md:hidden">
+          <LanguageSwitch className="mono-label text-ink-soft transition-colors hover:text-accent" />
+          <ContactLink label="Contact" className="btn-secondary" />
+        </div>
       </div>
     </header>
   );
