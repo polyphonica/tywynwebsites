@@ -8,7 +8,7 @@ export default function ClosingCta({ prompt }: { prompt: string }) {
           {prompt}
         </h2>
         <Link href="/contact" className="btn-primary shrink-0">
-          Get in touch
+          Book a free consultation
         </Link>
       </div>
     </section>

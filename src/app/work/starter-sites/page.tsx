@@ -17,7 +17,7 @@ export default function StarterSitesPage() {
       <OfferPageHero
         eyebrow="Offer 01 — Starter sites"
         title="A proven foundation, made yours."
-        description="Your site starts from a tried-and-tested template, then is customised with your content, images, and look. That keeps it quick to launch and fixed in price, with an optional monthly retainer for hosting, backups, and small edits."
+        description="Your site starts from a tried-and-tested template, then is customised with your content, images, and look. That keeps it quick to launch and fixed in price, with an optional monthly retainer for hosting, backups, and small edits. The price is agreed in a free, no-obligation video call before any work starts."
       />
       <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
         <div className="grid gap-6 md:grid-cols-2">

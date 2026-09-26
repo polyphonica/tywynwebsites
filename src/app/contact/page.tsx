@@ -17,9 +17,10 @@ export default function ContactPage() {
             Tell me about the project.
           </h1>
           <p className="mt-5 max-w-md text-lg leading-relaxed text-ink-soft">
-            Whether it&apos;s a straightforward site or something that needs
-            bookings and payments, the first step is the same — get in
-            touch and I&apos;ll reply to talk through what you need.
+            Whether it&apos;s a starter site or something that needs
+            bookings and payments, the first step is the same: a free,
+            no-obligation video call. We&apos;ll talk through what you need,
+            and I&apos;ll give you a clear price.
           </p>
         </div>
         <ContactForm />

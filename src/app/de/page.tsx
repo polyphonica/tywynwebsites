@@ -72,8 +72,8 @@ const examples = [
 
 const steps = [
   {
-    title: "Erstgespräch",
-    text: "Wir klären, was Sie und Ihre Besucher von der Website brauchen.",
+    title: "Kostenloses Erstgespräch",
+    text: "Unverbindlich per Videoanruf: Wir klären, was Sie und Ihre Besucher brauchen, und besprechen den Preis.",
   },
   {
     title: "Klares Angebot",
@@ -113,7 +113,7 @@ export default function GermanLandingPage() {
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a href="#kontakt" className="btn-primary">
-              Kontakt aufnehmen
+              Kostenloses Erstgespräch
             </a>
             <a href="#beispiele" className="btn-secondary">
               Beispiele ansehen
@@ -245,8 +245,10 @@ export default function GermanLandingPage() {
               Erzählen Sie mir von Ihrem Vorhaben.
             </h2>
             <p className="mt-5 max-w-md text-lg leading-relaxed text-ink-soft">
-              Schreiben Sie mir kurz, worum es geht — ich melde mich, um mit
-              Ihnen zu besprechen, was Sie brauchen.
+              Schreiben Sie mir kurz, worum es geht — ich melde mich, um ein
+              kostenloses, unverbindliches Erstgespräch per Videoanruf zu
+              vereinbaren. Dort besprechen wir, was Sie brauchen und was es
+              kostet.
             </p>
             <p className="mt-4 max-w-md leading-relaxed text-ink-soft">
               Bitte beachten Sie: Die Zusammenarbeit — Gespräche, E-Mails und
