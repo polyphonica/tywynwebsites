@@ -39,8 +39,8 @@ export const recorderEdCustom: Project = {
   name: "recorder-ed.com",
   url: "https://recorder-ed.com",
   summary:
-    "The technical showcase: a full platform handling accounts, courses, private-lesson booking, workshops, and digital-product e-commerce, built and maintained solo.",
-  tags: ["DJANGO", "POSTGRESQL", "STRIPE", "E-COMMERCE"],
+    "Everything a private tutor needs on one site: students book and pay for lessons and workshops, take courses, and buy digital downloads, with no third-party booking tools taking a cut.",
+  tags: ["BOOKINGS", "PAYMENTS", "COURSES", "DOWNLOADS"],
   image: "/screenshots/recorder-ed-home.png",
 };
 
@@ -49,8 +49,8 @@ export const polyphonica: Project = {
   name: "Polyphonica Recorder Trio",
   url: "https://polyphonicarecordertrio.com",
   summary:
-    "The same platform reconfigured for an ensemble: accounts, structured concert and workshop listings, pricing, and payments with refunds — proof the system adapts to a real second business.",
-  tags: ["ACCOUNTS", "BOOKING", "PAYMENTS & REFUNDS"],
+    "An ensemble that runs its own concerts and workshops: audiences book and pay online, and the trio issues refunds themselves, all from their own site rather than a ticketing platform.",
+  tags: ["ACCOUNTS", "BOOKINGS", "PAYMENTS & REFUNDS"],
   image: "/screenshots/polyphonica-home.png",
 };
 

@@ -16,8 +16,8 @@ export default function CustomAppsPage() {
     <>
       <OfferPageHero
         eyebrow="Offer 02 — Custom apps"
-        title="For anything a brochure site can't do."
-        description="Bookings, logins, marketplaces, scheduling, payments — scoped project plus an ongoing support retainer. recorder-ed and Polyphonica are the same platform, reconfigured for two different real businesses."
+        title="For anything a starter site can't do."
+        description="Bookings, logins, courses, payments and refunds, running on your own site, with no booking-platform commission or subscriptions and no juggling of separate tools. Built on components already running real businesses, so you pay for what's specific to you, not for reinventing the basics. Scoped project plus an ongoing support retainer."
       />
       <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
         <div className="grid gap-6 md:grid-cols-2">
