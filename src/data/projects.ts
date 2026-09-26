@@ -34,19 +34,6 @@ export type Prototype = {
   screenshots: Screenshot[];
 };
 
-// recorder-ed appears on both offer pages with different framing —
-// two card entries, same underlying project, different copy. Both link
-// through to the single detail page in `projectDetails` below.
-export const recorderEdSimple: Project = {
-  slug: "recorder-ed",
-  name: "recorder-ed.com",
-  url: "https://recorder-ed.com",
-  summary:
-    "Started as a recorder teaching platform — but the same system underneath (accounts, courses, payments) adapts to any private tutor who needs more than a brochure site.",
-  tags: ["ACCOUNTS", "COURSES", "PAYMENTS"],
-  image: "/screenshots/recorder-ed-home.png",
-};
-
 export const recorderEdCustom: Project = {
   slug: "recorder-ed",
   name: "recorder-ed.com",
@@ -67,8 +54,7 @@ export const polyphonica: Project = {
   image: "/screenshots/polyphonica-home.png",
 };
 
-export const simpleSitesProjects: Project[] = [
-  recorderEdSimple,
+export const starterSitesProjects: Project[] = [
   {
     slug: "watkins-woodwinds",
     name: "Watkins Woodwinds",
@@ -92,7 +78,7 @@ export const simpleSitesProjects: Project[] = [
     name: "XB Mediation",
     url: "https://xb-mediation.de",
     summary:
-      "An informational site for a German family and business mediation practice — outside the music world entirely, included to show the simple-sites offer isn't limited to arts clients.",
+      "An informational site for a German family and business mediation practice — outside the music world entirely, included to show the starter-sites offer isn't limited to arts clients.",
     tags: ["BROCHURE SITE", "NON-MUSIC"],
     image: "/screenshots/xb-mediation-home.png",
   },
@@ -101,13 +87,13 @@ export const simpleSitesProjects: Project[] = [
 export const customAppsProjects: Project[] = [recorderEdCustom, polyphonica];
 
 // Homepage "selected work" row: a deliberate cross-section, not a full list —
-// one pairing from custom apps plus one from simple sites, to signal both
+// one pairing from custom apps plus one from starter sites, to signal both
 // offers within a single row before the visitor picks a lane.
 export const homepageSelectedWork: Project[] = [
   recorderEdCustom,
   polyphonica,
   {
-    ...simpleSitesProjects[2],
+    ...starterSitesProjects[1],
   },
 ];
 
@@ -231,7 +217,7 @@ export const projectDetails: ProjectDetail[] = [
     intro:
       "An informational site for a German family and business mediation practice — outside the music world entirely.",
     body: [
-      "An example of website creation outside the arts: the simple-sites offer isn't limited to music and arts clients.",
+      "An example of website creation outside the arts: the starter-sites offer isn't limited to music and arts clients.",
       "Built for a client in the German-speaking world, the site was created after detailed discussions to clarify what the client and their visitors needed from it. The result is a calm, professional site, written entirely in German, that explains family and business mediation, sets out how the process works and what it costs, and makes it easy to book an initial consultation.",
       "The site is fully responsive, so it works just as well on phones and tablets as on a desktop, and search engine optimisation is built in from the start to help people looking for mediation find it.",
     ],

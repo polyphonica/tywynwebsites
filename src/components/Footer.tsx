@@ -9,10 +9,10 @@ export default function Footer() {
         </p>
         <div className="flex gap-6">
           <Link
-            href="/work/simple-sites"
+            href="/work/starter-sites"
             className="mono-label text-ink-soft transition-colors hover:text-accent"
           >
-            Simple sites
+            Starter sites
           </Link>
           <Link
             href="/work/custom-apps"

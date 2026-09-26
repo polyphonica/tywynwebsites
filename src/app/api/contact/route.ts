@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 const projectTypes: Record<string, string> = {
-  "simple-site": "A simple site",
+  "starter-site": "A starter site",
   "custom-app": "A custom app",
   "not-sure": "Not sure yet",
 };

@@ -35,7 +35,7 @@ export default async function ProjectDetailPage(
       <section className="border-b border-rule">
         <div className="mx-auto max-w-6xl px-6 pt-16 pb-14 sm:pt-20 sm:pb-16">
           <Link
-            href="/work/simple-sites"
+            href="/work/starter-sites"
             className="mono-label mb-8 inline-block text-ink-soft transition-colors hover:text-accent"
           >
             ← Back to work

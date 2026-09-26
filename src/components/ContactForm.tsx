@@ -84,10 +84,10 @@ export default function ContactForm() {
         <select
           id="projectType"
           name="projectType"
-          defaultValue="simple-site"
+          defaultValue="starter-site"
           className="border border-rule bg-paper px-4 py-3 text-ink outline-none focus:border-accent"
         >
-          <option value="simple-site">A simple site</option>
+          <option value="starter-site">A starter site</option>
           <option value="custom-app">A custom app</option>
           <option value="not-sure">Not sure yet</option>
         </select>

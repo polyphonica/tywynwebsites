@@ -5,7 +5,7 @@ import { siteUrl } from "@/lib/site";
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     "",
-    "/work/simple-sites",
+    "/work/starter-sites",
     "/work/custom-apps",
     "/prototypes",
     "/about",

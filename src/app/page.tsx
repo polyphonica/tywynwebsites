@@ -21,7 +21,7 @@ export default function Home() {
             small arts organisation actually needs from it.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link href="/work/simple-sites" className="btn-primary">
+            <Link href="/work/starter-sites" className="btn-primary">
               See the work
             </Link>
             <Link href="/prototypes" className="btn-secondary">
@@ -43,10 +43,10 @@ export default function Home() {
         <div className="grid gap-6 md:grid-cols-2">
           <OfferCard
             eyebrow="Offer 01"
-            title="Simple sites"
-            description="A straightforward web presence for teachers, ensembles, and small businesses — fixed-price build, with an optional monthly retainer for hosting, backups, and small edits."
-            href="/work/simple-sites"
-            cta="View simple sites"
+            title="Starter sites"
+            description="A proven starter template, customised with your content and look — for teachers, ensembles, and small businesses. Fixed price, with an optional monthly retainer for hosting, backups, and small edits."
+            href="/work/starter-sites"
+            cta="View starter sites"
           />
           <OfferCard
             eyebrow="Offer 02"
@@ -62,7 +62,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
           <p className="mono-label mb-3 text-brass">Selected work</p>
           <h2 className="mb-10 font-display text-2xl font-medium text-ink sm:text-3xl">
-            A cross-section, custom and simple
+            A cross-section of starter sites and custom apps
           </h2>
           <div className="grid gap-6 md:grid-cols-3">
             {homepageSelectedWork.map((project) => (
@@ -75,15 +75,14 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
         <div className="card-frame flex flex-col gap-6 p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
           <div>
-            <p className="mono-label mb-3 text-brass">
-              {prototypes.length} self-initiated builds
-            </p>
+            <p className="mono-label mb-3 text-brass">Self-initiated work</p>
             <h2 className="font-display text-2xl font-medium text-ink sm:text-3xl">
               Prototypes
             </h2>
             <p className="mt-3 max-w-lg text-ink-soft">
-              Not commissioned work — apps built to explore ideas, some on
-              their way to becoming public demos.
+              Apps built to explore ideas rather than for a client —{" "}
+              {prototypes.length} so far, some on their way to becoming public
+              demos.
             </p>
           </div>
           <Link href="/prototypes" className="btn-secondary shrink-0">
