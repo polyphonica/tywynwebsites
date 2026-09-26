@@ -48,7 +48,7 @@ export default function AboutPage() {
             <p>
               Many web developers and digital agencies working with musicians
               and arts organisations understand either the technology or the
-              professional musical environment — but rarely both. My work sits
+              professional musical environment — but not always both. My work sits
               at the intersection of these two disciplines. This combination
               of first-hand knowledge of the professional music sector,
               teaching and performance, together with my experience in
